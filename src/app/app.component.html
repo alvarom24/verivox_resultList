@@ -1,11 +1,21 @@
 <div class="filter-container">
-  <div class="sort-item" (click)="sortBy('upload')">
+  <div
+    [ngClass]="{ 'active': activeFilter === 'upload' }"
+    class="sort-item"
+    (click)="sortBy('upload')"
+  >
     Upload
   </div>
-  <div class="sort-item" (click)="sortBy('download')">
+  <div 
+    [ngClass]="{ 'active': activeFilter === 'download' }"
+    class="sort-item" 
+    (click)="sortBy('download')">
     Download
   </div>
-  <div class="sort-item" (click)="sortBy('price')">
+  <div 
+    [ngClass]="{ 'active': activeFilter === 'price' }" 
+    class="sort-item" 
+    (click)="sortBy('price')">
     Price
   </div>
   <div class="sort-item" (click)="sortBy('remove')">

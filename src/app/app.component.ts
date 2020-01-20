@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   public resultList: resultModel[];
   public isMobile: boolean;
   public isTablet: boolean;
+  public activeFilter: string;
 
   constructor(public resultListService: ResultListServiceService) {
     this.isMobile = /android|webos|iphone|ipod|blackberry|windows phone/.test(
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit {
   }
 
   public async ngOnInit(): Promise<void> {
+    this.activeFilter = "";
     this.fetchResults();
   }
 
@@ -46,6 +48,7 @@ export class AppComponent implements OnInit {
   }
 
   public sortBy(criteria: string): void {
+    this.activeFilter = criteria;
     switch (criteria) {
       case "upload":
         this.resultList.sort((a, b) =>
