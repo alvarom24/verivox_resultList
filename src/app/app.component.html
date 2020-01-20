@@ -1,6 +1,21 @@
+<div class="filter-container">
+  <div class="sort-item" (click)="sortBy('upload')">
+    Upload
+  </div>
+  <div class="sort-item" (click)="sortBy('download')">
+    Download
+  </div>
+  <div class="sort-item" (click)="sortBy('price')">
+    Price
+  </div>
+  <div class="sort-item" (click)="sortBy('remove')">
+    X
+  </div>
+</div>
+
 <div class="result-container" *ngFor="let result of resultList">
   <div class="result-rank">{{ result.rank }}</div>
-  <div class="result-name">{{ result.provider.caption.text }}</div>
+  <div class="result-name">{{ result.product.content.text }}</div>
   <div class="result-size" *ngIf="isMobile && !isTablet">
     <span class="amount"
       >&#x2193; {{ result.contractTerm.downloadSpeed.amount }}

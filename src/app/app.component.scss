@@ -1,6 +1,20 @@
 $desktop: 960px;
 $tablet: 768px;
 
+.filter-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .sort-item {
+    width: 110px;
+    padding: 5px;
+    border: 1px solid black;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}
+
 .result-container {
   display: flex;
   flex-direction: row;
